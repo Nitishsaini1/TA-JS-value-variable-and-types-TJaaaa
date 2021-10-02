@@ -9,7 +9,7 @@
 let num = Number(prompt("Enter a number "));
 // let num = 8;
 
-if (num > 10){
+if (num % 2 === 0){
   alert('number is even')
 } else {
   alert('number is odd')
@@ -41,16 +41,16 @@ if(numMax1>numMax2){
   - `else` print the message " All men must die"
 */
 
-let house = prompt("game of thrones one house name");
+let house = prompt("Enter game of thrones one house name");
 
 
 
-if (house < "stark"){
-  alert(" A lannister always pays his debt");
-} else if ( house = "lannister"){
+if (house === "stark"){
   alert( " Winter is coming"); 
+} else if ( house === "lannister"){
+  alert(" A lannister always pays his debt");
 } else{
-  alert("all men must die");
+  alert( " All men must die");
 }
 // 5. Convert the above code using`?` terniary operator
 
@@ -59,50 +59,51 @@ if (house < "stark"){
 //  :
 //  alert("A lannister always pays his debt");
  
+house === "stark" ?   alert("Winter is coming") :  house === "lannister" ?   alert(" A lannister always pays his debt") :   alert(" All men must die") ;
  // Switch
 
 // 6. Write a program that takes the number of the month(1 - 12) and alert number of days in the month.
-let month = Number(prompt("Your birth of month"));
+let monthName = prompt("Name of a month");
 
-switch (month){
-  case 1:
+switch (monthName){
+  case "January":
      alert('Jan month of 30 days');
      break;
-    case 2:
+    case "February":
         alert('Feb month of 28 days');
           break;
-     case 3:
+     case "March":
          alert('March month of 31 days');
          break;
-      case 4:
+      case "April":
         alert('April  month of 30 days');
         break;
-      case 5:
+      case "May":
          alert('May  month of 30 days');
          break;
-      case 6:
+      case "June":
           alert('June month of 30 days');
          break;
-      case 7:
+      case "July":
          alert('July month of 31 days');
          break;
-      case 8:
+      case "August":
          alert('August month of 31 days');
         break;
-      case 9:
+      case "September":
            alert('September month of 30 days');
           break;
-      case 10:
+      case "October":
              alert('October month of 31 days');
              break;
-      case 11:
+      case "November":
              alert('November month of 30 days');
              break;
-      case 12:
+      case "December":
               alert('December month of 30 days');
               break;
       default:
-             alert("Not a month ");
+             alert("Not a vaild input ");
 }
 
 /* 7.
@@ -116,16 +117,25 @@ switch (month){
 
 let salary = Number(prompt('Your salary ?'));
 
-switch ( salary ){
-    case ( 20000 < salary):
-       alert("In hand amount is  20000");
-       break;
-    case ( 40000 < salary):
-       alert("In hand amount is 40000");
-       break;
-    case ( 50000 < salary):
-       alert("In hand amount is 50000");  
-       
+switch (true){
+    case salary <= 20000 :{
+      let tax = (salary * 10) / 100;
+      alert(`Your in-hand amount ${salary - tax}`);
+      break;
+    }
+    case salary <= 40000 : {
+      let tax = (salary * 20) / 100;
+      alert(`Your in-hand amount ${salary - tax}`);
+      
+      break;
+    }
+    case salary > 50000 : {
+      let tax = (salary * 30) / 100;
+      alert(`Your in-hand amount ${salary - tax}`);
+        break;
+      }
+         default:
+         alert("Not a valid input")
 }
 
 //  if..else vs switch
@@ -144,33 +154,33 @@ let marks =  Number(prompt(' Your marks ')) ;
 
 if (marks > 100 ){
   alert("Marks can't be greater than 100");
-} else if (marks > 80){
+} else if (marks > 80 && marks < 100){
   alert("Grade A");
-} else if (marks > 50){
+} else if (marks > 50 && marks < 80){
   alert("Grade B");
-} else if (marks > 30){
+} else if (marks > 30 && marks < 50){
   alert("Grade C");
-} else if (marks > 0){
+} else {
   alert("Grade D");
 }
 
 //switch
 
-switch (marks){
+switch (true){
    case marks > 100  :
-    alert("Marks can't be greater than 100 by switch");
+    alert("Marks can't be greater than 100 ");
      break;
-     case marks > 80  :
-      alert("Marks can't be greater than 100 by switch");
+     case marks > 80 && marks < 100  :
+      alert("Grade A");
        break;
-   case marks > 50 :
-    alert("Marks can't be greater than 100 by switch");
+   case marks > 50 && marks < 80 :
+    alert("Grade B");
      break;
-   case marks > 30  :
-    alert("Marks can't be greater than 100 by switch");
+   case marks > 30 && marks < 50 :
+    alert("Grade C");
      break;
-   case marks > 0  :
-    alert("Marks can't be greater than 100 by switch");
+   default:
+    alert("Grade D");
      
   
 }
@@ -186,18 +196,21 @@ switch (marks){
   - Anything else should alert`Not a valid input`
 */
 
-let weatherCondition = Number(prompt("What is the weather like outside?"));
-   let weather = weatherCondition;
-      let weather = sunny, rainy, hot, freezing;
-
-if (weatherCondition = sunny){
-  alert("Wear a T-shirt")
-} else if (weatherCondition = rainy){
-  alert(`Don't forget to take your raincoat`)
-} else if (weatherCondition = hot){
-  alert(`Get a hanky`)
-} else if (weatherCondition = freezing){
-  alert(`Get your sweeter on`)
-} else {
-  alert(`Not a valid input`)
+let weatherCondition = prompt("What is the weather like outside?");
+  
+switch (weatherCondition){
+  case "sunny":
+    alert('Wear a T-shirt');
+     break;
+  case "rainy":
+    alert('Dont forget to take your raincoat');
+     break;
+  case "hot":
+    alert('Get a hanky');
+     break;
+  case "freezing":
+    alert('Get your sweeter on');
+     break;
+  default:
+    alert('Not a valid input');
 }
