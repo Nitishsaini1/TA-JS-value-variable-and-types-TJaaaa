@@ -5,7 +5,7 @@
 3. Declare variable `age` and `isLearning` with value `22` and `true` in the same line. hint: declaring multiplemvariable in one line.
 4. Now change the value of `user` to `John` and log the value of both `user` and `userName`.
 */
-let user = prompt(`Enter your naame. `);
+let user = prompt(`Enter your name. `);
    alert(`Your name is ${user}`);
         userName = user ; 
          console.log(user,userName);
@@ -20,7 +20,7 @@ Create a third variable called `sum`, using `+` operator add numA and numB , sto
 */
 let numA = Number(prompt(`Enter a number`))
 let numB = Number(prompt(`Enter a number`))
-let   sum = (`${numA + numB}`);
+let   sum = (numA + numB);
  alert(`${sum}`);
 // Loops
 
@@ -40,23 +40,27 @@ for (let j = 0; j <= 10; j = j + 2 ) console.log(j);
 // 5. Concat all the numbers from 5 to 0 (both inclusive) in descending order using a while loop. (543210)
 
 // while loop
-/*let i = 5;
-while (i >= 0){
-    if (i % 2 == 0 ){
-        console.log(i);    
-    }
-    i = i - 1;
-}*/
 
-let i = 0;
-while (i < 10){
-    if (i % 2 == 0 ){
-        console.log(i);    
-    }
-    i = i + 1;
-}
+let finalString = "";
+let initialValue = 5 ;
+
+while(initialValue >= 0){
+    finalString += initialValue;
+    initialValue --;
+}  console.log(finalString);
 
 // 6. Concat all the even numbers from 10 to 0 (both inclusive) in descending order using a while loop. (1086420)
+
+
+let finalEvenString = "";
+let initialEvenValue = 10 ;
+
+while(initialEvenValue >= 0){
+    if (initialEvenValue % 2 === 0){
+        finalEvenString += initialEvenValue;
+    }
+    initialEvenValue --;
+}  console.log(finalEvenString);
 
 
 // Comparisoin
@@ -71,12 +75,11 @@ Example:
 "hello", -21; // false
 
 */
-let num1 = Number(prompt(`Enter a number `));
-let num2 = Number(prompt(`Enter a number `));
- if (num1=num2){
-   alert(`true`)
- } else if ( num1 != num2) {
-     alert(`false`)
- } else {
-     alert(`Enter a valid value`)
- };
+let num1 = +prompt(`Enter  number one `);
+let num2 = +prompt(`Enter number two `);
+
+if (isNaN (num1) || isNaN (num2)){
+    alert('Enter a valid value')
+} else {
+    alert( num1 === num2)
+}
