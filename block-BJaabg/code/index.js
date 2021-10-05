@@ -30,6 +30,6 @@ if (taxedAmount < bank_balance) {
 }else {
    console.log (`You can't afford buying the phone`)
 }
-
+z
 
 // ⛑ Answer of the above will `$334.76`.
